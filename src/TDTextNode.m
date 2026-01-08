@@ -26,11 +26,6 @@
 
 @implementation TDTextNode
 
-- (void)dealloc {
-    [super dealloc];
-}
-
-
 - (void)renderInContext:(TDTemplateContext *)ctx {
     NSParameterAssert(ctx);
 

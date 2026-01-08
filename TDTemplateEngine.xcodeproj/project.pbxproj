@@ -14,7 +14,7 @@
 		D3100CC41CE52ED7007B38BE /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; };
 		D3100CC51CE52ED7007B38BE /* TDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DA918E609E700DC591E /* TDNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC61CE52ED7007B38BE /* TDRootNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB918E60F9F00DC591E /* TDRootNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		D3100CC71CE52ED7007B38BE /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; };
+		D3100CC71CE52ED7007B38BE /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC81CE52ED7007B38BE /* TDPrintNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB518E60E4500DC591E /* TDPrintNode.m */; };
 		D3100CC91CE52ED7007B38BE /* TDTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DD918E63D5B00DC591E /* TDTag.m */; };
 		D3100CCA1CE52ED7007B38BE /* TDIfTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DDF18E6423500DC591E /* TDIfTag.m */; };
@@ -140,7 +140,7 @@
 		D31E3E411F1C1D04004BD0C6 /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; };
 		D31E3E421F1C1D04004BD0C6 /* TDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DA918E609E700DC591E /* TDNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E431F1C1D04004BD0C6 /* TDRootNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB918E60F9F00DC591E /* TDRootNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		D31E3E441F1C1D04004BD0C6 /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; };
+		D31E3E441F1C1D04004BD0C6 /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E451F1C1D04004BD0C6 /* TDPrintNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB518E60E4500DC591E /* TDPrintNode.m */; };
 		D31E3E461F1C1D04004BD0C6 /* TDTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DD918E63D5B00DC591E /* TDTag.m */; };
 		D31E3E471F1C1D04004BD0C6 /* TDIfTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DDF18E6423500DC591E /* TDIfTag.m */; };
@@ -305,7 +305,7 @@
 		D3A29DBA18E60F9F00DC591E /* TDRootNode.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29DB818E60F9F00DC591E /* TDRootNode.h */; };
 		D3A29DBB18E60F9F00DC591E /* TDRootNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB918E60F9F00DC591E /* TDRootNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3A29DBE18E61ACA00DC591E /* TDTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29DBC18E61ACA00DC591E /* TDTextNode.h */; };
-		D3A29DBF18E61ACA00DC591E /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; };
+		D3A29DBF18E61ACA00DC591E /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3A29DD118E63A1C00DC591E /* TDTemplateContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DCF18E63A1C00DC591E /* TDTemplateContext.m */; };
 		D3A29DD618E63D4F00DC591E /* TDForTag.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29DD418E63D4F00DC591E /* TDForTag.h */; };
 		D3A29DD718E63D4F00DC591E /* TDForTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DD518E63D4F00DC591E /* TDForTag.m */; };
