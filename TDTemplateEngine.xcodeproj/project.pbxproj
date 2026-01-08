@@ -748,7 +748,7 @@
 				D3A29DEB18E6548200DC591E /* Expression */,
 				D367DFBA18E5EF6900F97BCC /* Supporting Files */,
 			);
-			path = TDTemplateEngine;
+			name = TDTemplateEngine;
 			sourceTree = "<group>";
 		};
 		D367DFBA18E5EF6900F97BCC /* Supporting Files */ = {
@@ -771,7 +771,7 @@
 				D367DFCF18E5EF6900F97BCC /* Supporting Files */,
 			);
 			name = "TDTemplateEngine Tests";
-			path = TDTemplateEngineTests;
+			path = test;
 			sourceTree = "<group>";
 		};
 		D367DFCF18E5EF6900F97BCC /* Supporting Files */ = {

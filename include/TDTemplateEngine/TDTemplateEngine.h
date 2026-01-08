@@ -52,6 +52,7 @@ FOUNDATION_EXPORT const unsigned char TDTemplateengineVersionString[];
 @class TDTemplateContext;
 
 extern NSString * const TDTemplateEngineTagEndPrefix;
+extern NSString * const TDTemplateEngineTagEndPrefixAlt;
 extern NSString * const TDTemplateEngineErrorDomain;
 extern const NSInteger TDTemplateEngineRenderingErrorCode;
 

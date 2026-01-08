@@ -176,7 +176,13 @@
     [self execute:^{
     
     PKToken *tok = POP();
-    NSString *tagName = [tok.stringValue substringFromIndex:[TDTemplateEngineTagEndPrefix length]];
+    NSString *str = tok.stringValue;
+    NSString *tagName = nil;
+    if ([str hasPrefix:TDTemplateEngineTagEndPrefix]) {
+        tagName = [str substringFromIndex:[TDTemplateEngineTagEndPrefix length]];
+    } else if ([str hasPrefix:TDTemplateEngineTagEndPrefixAlt]) {
+        tagName = [str substringFromIndex:[TDTemplateEngineTagEndPrefixAlt length]];
+    }
     while (_currentParent && ![_currentParent.tagName isEqualToString:tagName])
         self.currentParent = POP();
 

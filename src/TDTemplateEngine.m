@@ -70,6 +70,7 @@
 #import "PKToken+Verbatim.h"
 
 NSString * const TDTemplateEngineTagEndPrefix = @"/";
+NSString * const TDTemplateEngineTagEndPrefixAlt = @"end";
 NSString * const TDTemplateEngineErrorDomain = @"TDTemplateEngineErrorDomain";
 const NSInteger TDTemplateEngineRenderingErrorCode = 1;
 
@@ -343,7 +344,8 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
             str = [str substringFromIndex:tagStartDelimLen];
             str = [str stringByTrimmingCharactersInSet:wsSet];
             
-            if ([str hasPrefix:TDTemplateEngineTagEndPrefix]) {
+            if ([str hasPrefix:TDTemplateEngineTagEndPrefix] ||
+                [str hasPrefix:TDTemplateEngineTagEndPrefixAlt]) {
                 kind = TDTEMPLATE_TOKEN_KIND_BLOCK_END_TAG;
             } else {
                 NSString *tagName = [str componentsSeparatedByCharactersInSet:wsSet][0]; // TODO
