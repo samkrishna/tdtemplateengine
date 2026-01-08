@@ -34,9 +34,5 @@
 }
 
 
-- (void)dealloc {
-    self.staticContext = nil;
-    [super dealloc];
-}
 
 @end

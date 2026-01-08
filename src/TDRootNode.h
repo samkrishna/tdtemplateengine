@@ -28,5 +28,5 @@
 
 + (instancetype)rootNodeWithStaticContext:(TDTemplateContext *)ctx;
 
-@property (nonatomic, retain) TDTemplateContext *staticContext;
+@property (nonatomic, strong) TDTemplateContext *staticContext;
 @end
