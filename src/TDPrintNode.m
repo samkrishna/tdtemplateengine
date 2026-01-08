@@ -26,12 +26,6 @@
 
 @implementation TDPrintNode
 
-- (void)dealloc {
-    self.expression = nil;
-    [super dealloc];
-}
-
-
 #pragma mark -
 #pragma mark Public
 
