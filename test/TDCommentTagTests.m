@@ -106,4 +106,76 @@
     TDEqualObjects(@"foobaz.", res);
 }
 
+- (void)testOriginalEndCommentF {
+    NSString *input = @"{% comment %}f{% /comment %}";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"", res);
+}
+
+- (void)testOriginalEndCommentMixedContent1 {
+    NSString *input = @"foo {% comment %}bar {% /comment %} baz.";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"foo  baz.", res);
+}
+
+- (void)testOriginalEndCommentMixedContent2 {
+    NSString *input = @"foo {% comment %}bar {% /comment %}baz.";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"foo baz.", res);
+}
+
+- (void)testOriginalEndCommentMixedContent3 {
+    NSString *input = @"foo{% comment %}bar {% /comment %}baz.";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"foobaz.", res);
+}
+
+- (void)testOriginalEndCommentMixedContent4 {
+    NSString *input = @"foo{% comment %}bar{% /comment %}baz.";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"foobaz.", res);
+}
+
+- (void)testOriginalEndCommentMixedContent5 {
+    NSString *input = @"foo{% comment %}bar{% /comment %}baz{% comment %}bat{% /comment %}.";
+    id vars = nil;
+
+    NSError *err = nil;
+    BOOL success = [_engine processTemplateString:input withVariables:vars toStream:_output error:&err];
+    TDTrue(success);
+    TDNil(err);
+    NSString *res = [self outputString];
+    TDEqualObjects(@"foobaz.", res);
+}
+
 @end
