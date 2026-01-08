@@ -29,7 +29,7 @@
 #import <TDTemplateEngine/XPStringValue.h>
 
 @interface XPAssembler ()
-@property (nonatomic, retain) PKToken *openParen;
+@property (nonatomic, strong) PKToken *openParen;
 @end
 
 @implementation XPAssembler
@@ -40,12 +40,6 @@
         self.openParen = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"(" doubleValue:0.0];
     }
     return self;
-}
-
-
-- (void)dealloc {
-    self.openParen = nil;
-    [super dealloc];
 }
 
 
