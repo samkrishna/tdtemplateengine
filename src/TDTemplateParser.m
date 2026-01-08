@@ -14,12 +14,12 @@
 @end
 
 @interface TDTag ()
-@property (nonatomic, retain) PKToken *endTagToken;
+@property (nonatomic, strong) PKToken *endTagToken;
 @end
 
 @interface TDTemplateParser ()
     
-@property (nonatomic, assign) TDNode *currentParent; // weakref
+@property (nonatomic, weak) TDNode *currentParent; // weakref
 
 @end
 
@@ -46,16 +46,6 @@
 
     }
     return self;
-}
-
-- (void)dealloc {
-        
-    self.engine = nil;
-    self.staticContext = nil;
-    self.currentParent = nil;
-
-
-    [super dealloc];
 }
 
 - (void)start {

@@ -13,8 +13,8 @@ enum {
 
 @interface TDTemplateParser : PKParser
         
-@property (nonatomic, assign) TDTemplateEngine *engine; // weakref
-@property (nonatomic, retain) TDTemplateContext *staticContext;
+@property (nonatomic, weak) TDTemplateEngine *engine; // weakref
+@property (nonatomic, strong) TDTemplateContext *staticContext;
 
 @end
 

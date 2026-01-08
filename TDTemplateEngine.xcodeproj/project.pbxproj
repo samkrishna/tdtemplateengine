@@ -11,7 +11,7 @@
 		D3100CC11CE52ED7007B38BE /* TDTemplateEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29D8318E5F57E00DC591E /* TDTemplateEngine.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC21CE52ED7007B38BE /* TDWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5064318ECA12500BAC93B /* TDWriter.m */; };
 		D3100CC31CE52ED7007B38BE /* TDTemplateContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DCF18E63A1C00DC591E /* TDTemplateContext.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		D3100CC41CE52ED7007B38BE /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; };
+		D3100CC41CE52ED7007B38BE /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC51CE52ED7007B38BE /* TDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DA918E609E700DC591E /* TDNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC61CE52ED7007B38BE /* TDRootNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB918E60F9F00DC591E /* TDRootNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CC71CE52ED7007B38BE /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -137,7 +137,7 @@
 		D31E3E3E1F1C1D04004BD0C6 /* TDTemplateEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29D8318E5F57E00DC591E /* TDTemplateEngine.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E3F1F1C1D04004BD0C6 /* TDWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5064318ECA12500BAC93B /* TDWriter.m */; };
 		D31E3E401F1C1D04004BD0C6 /* TDTemplateContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DCF18E63A1C00DC591E /* TDTemplateContext.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		D31E3E411F1C1D04004BD0C6 /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; };
+		D31E3E411F1C1D04004BD0C6 /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E421F1C1D04004BD0C6 /* TDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DA918E609E700DC591E /* TDNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E431F1C1D04004BD0C6 /* TDRootNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DB918E60F9F00DC591E /* TDRootNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E441F1C1D04004BD0C6 /* TDTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DBD18E61ACA00DC591E /* TDTextNode.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -290,7 +290,7 @@
 		D391AB00202D6D1600ECCE37 /* TDFabsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D391AAFC202D6C9800ECCE37 /* TDFabsFilter.m */; };
 		D391AB01202D6D1700ECCE37 /* TDFabsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D391AAFC202D6C9800ECCE37 /* TDFabsFilter.m */; };
 		D398E2EF18EA2C51004B883C /* TDTemplateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = D398E2ED18EA2C51004B883C /* TDTemplateParser.h */; };
-		D398E2F018EA2C51004B883C /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; };
+		D398E2F018EA2C51004B883C /* TDTemplateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D398E2EE18EA2C51004B883C /* TDTemplateParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3A21F3D1AC9E40D0009A712 /* TDUnaryExpressionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A21F3C1AC9E40D0009A712 /* TDUnaryExpressionTests.m */; };
 		D3A21F441AC9E85F0009A712 /* TDUnaryExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A21F421AC9E85F0009A712 /* TDUnaryExpression.h */; };
 		D3A21F451AC9E85F0009A712 /* TDUnaryExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A21F431AC9E85F0009A712 /* TDUnaryExpression.m */; };
