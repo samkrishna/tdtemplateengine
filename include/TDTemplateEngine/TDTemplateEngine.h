@@ -72,7 +72,7 @@ extern const NSInteger TDTemplateEngineRenderingErrorCode;
 - (BOOL)processTemplateFile:(NSString *)path encoding:(NSStringEncoding)enc withVariables:(NSDictionary *)vars toStream:(NSOutputStream *)output error:(NSError **)err;
 
 // static/compile-time vars go here. this is the global scope at both compile-time and render-time. persists across compiles and renders.
-@property (nonatomic, retain, readonly) TDTemplateContext *staticContext;
+@property (nonatomic, strong, readonly) TDTemplateContext *staticContext;
 
 @property (nonatomic, copy) NSString *printStartDelimiter;
 @property (nonatomic, copy) NSString *printEndDelimiter;

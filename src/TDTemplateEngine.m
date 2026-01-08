@@ -75,18 +75,18 @@ NSString * const TDTemplateEngineErrorDomain = @"TDTemplateEngineErrorDomain";
 const NSInteger TDTemplateEngineRenderingErrorCode = 1;
 
 @interface TDTemplateEngine ()
-@property (nonatomic, retain) NSRegularExpression *delimiterRegex;
-@property (nonatomic, retain) NSRegularExpression *cleanerRegex;
-@property (nonatomic, retain, readwrite) TDTemplateContext *staticContext;
-@property (nonatomic, retain) NSMutableDictionary *tagTab;
-@property (nonatomic, retain) NSMutableDictionary *filterTab;
-@property (nonatomic, retain) TDParser *expressionParser;
+@property (nonatomic, strong) NSRegularExpression *delimiterRegex;
+@property (nonatomic, strong) NSRegularExpression *cleanerRegex;
+@property (nonatomic, strong, readwrite) TDTemplateContext *staticContext;
+@property (nonatomic, strong) NSMutableDictionary *tagTab;
+@property (nonatomic, strong) NSMutableDictionary *filterTab;
+@property (nonatomic, strong) TDParser *expressionParser;
 @end
 
 @implementation TDTemplateEngine
 
 + (instancetype)templateEngine {
-    return [[[TDTemplateEngine alloc] init] autorelease];
+    return [[TDTemplateEngine alloc] init];
 }
 
 
@@ -97,7 +97,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
         self.printEndDelimiter = @"}}";
         self.tagStartDelimiter = @"{%";
         self.tagEndDelimiter = @"%}";
-        self.staticContext = [[[TDTemplateContext alloc] init] autorelease];
+        self.staticContext = [[TDTemplateContext alloc] init];
         
         NSError *err = nil;
         self.cleanerRegex = [NSRegularExpression regularExpressionWithPattern:@"([{}\\[\\]\\(\\).+?*])" options:NSRegularExpressionAnchorsMatchLines error:&err];
@@ -137,26 +137,13 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
         [self registerFilterClass:[TDLpadFilter class] forName:[TDLpadFilter filterName]];
         [self registerFilterClass:[TDRpadFilter class] forName:[TDRpadFilter filterName]];
 
-        self.expressionParser = [[[TDParser alloc] initWithDelegate:nil] autorelease];
+        self.expressionParser = [[TDParser alloc] initWithDelegate:nil];
         _expressionParser.engine = self;
     }
     return self;
 }
 
 
-- (void)dealloc {
-    self.printStartDelimiter = nil;
-    self.printEndDelimiter = nil;
-    self.tagStartDelimiter = nil;
-    self.tagEndDelimiter = nil;
-    self.delimiterRegex = nil;
-    self.cleanerRegex = nil;
-    self.staticContext = nil;
-    self.tagTab = nil;
-    self.filterTab = nil;
-    self.expressionParser = nil;
-    [super dealloc];
-}
 
 
 #pragma mark -
@@ -213,7 +200,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
     [output open];
     TDAssert([output hasSpaceAvailable]);
     
-    TDTemplateContext *dynamicContext = [[[TDTemplateContext alloc] initWithVariables:vars output:output] autorelease];
+    TDTemplateContext *dynamicContext = [[TDTemplateContext alloc] initWithVariables:vars output:output];
     TDAssert(_staticContext);
     dynamicContext.enclosingScope = _staticContext;
     
@@ -224,7 +211,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
     }
     @catch (NSException *ex) {
         success = NO;
-        if (err) *err = [NSError errorWithDomain:TDTemplateEngineErrorDomain code:TDTemplateEngineRenderingErrorCode userInfo:[[[ex userInfo] copy] autorelease]];
+        if (err) *err = [NSError errorWithDomain:TDTemplateEngineErrorDomain code:TDTemplateEngineRenderingErrorCode userInfo:[[ex userInfo] copy]];
     }
     
     return success;
@@ -277,7 +264,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
     
     NSString *pattern = [NSString stringWithFormat:@"(%@.*?%@|%@.*?%@)", printStartDelimiter, printEndDelimiter, tagStartDelimiter, tagEndDelimiter];
 
-    self.delimiterRegex = [[[NSRegularExpression alloc] initWithPattern:pattern options:0 error:outErr] autorelease];
+    self.delimiterRegex = [[NSRegularExpression alloc] initWithPattern:pattern options:0 error:outErr];
 
     BOOL success = nil != _delimiterRegex;
     return success;
@@ -332,7 +319,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
         lastRange = currRange;
         NSUInteger kind = 0;
         
-        NSString *str = [[verbStr copy] autorelease];
+        NSString *str = [verbStr copy];
         if ([str hasPrefix:_printStartDelimiter]) {
             kind = TDTEMPLATE_TOKEN_KIND_PRINT;
             str = [str substringToIndex:len - printEndDelimLen];
@@ -383,7 +370,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
 
 - (TDNode *)compile:(NSArray *)frags error:(NSError **)err {
     
-    TDTemplateParser *p = [[[TDTemplateParser alloc] initWithDelegate:nil] autorelease];
+    TDTemplateParser *p = [[TDTemplateParser alloc] initWithDelegate:nil];
     p.engine = self;
 
     TDAssert(_staticContext);
@@ -505,7 +492,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
     if (!cls) {
         [NSException raise:TDTemplateEngineErrorDomain format:@"Unknown tag name '%@'", tagName];
     }
-    TDTag *tag = [[[cls alloc] init] autorelease];
+    TDTag *tag = [[cls alloc] init];
     TDAssert(tag);
     TDAssert([tag.tagName isEqualToString:tagName]);
     return tag;
@@ -533,7 +520,7 @@ const NSInteger TDTemplateEngineRenderingErrorCode = 1;
     if (!cls) {
         [NSException raise:TDTemplateEngineErrorDomain format:@"Unknown filter name '%@'", filterName];
     }
-    TDFilter *filter = [[[cls alloc] init] autorelease];
+    TDFilter *filter = [[cls alloc] init];
     TDAssert(filter);
     TDAssert([filter.filterName isEqualToString:filterName]);
     return filter;
