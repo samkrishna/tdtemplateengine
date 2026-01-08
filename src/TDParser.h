@@ -47,7 +47,7 @@ enum {
         
 + (PKTokenizer *)tokenizer;
 
-@property (nonatomic, assign) TDTemplateEngine *engine; // weakref
+@property (nonatomic, weak) TDTemplateEngine *engine; // weakref
 @property (nonatomic, assign) BOOL doLoopExpr;
 
 @end

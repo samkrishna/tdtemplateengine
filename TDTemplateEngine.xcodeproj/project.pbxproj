@@ -45,7 +45,7 @@
 		D3100CE31CE52ED7007B38BE /* TDReplaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AC684E1A41D43400F7EB6A /* TDReplaceFilter.m */; };
 		D3100CE41CE52ED7007B38BE /* TDTemplateEngine+ExpressionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7E26A18EF9286009BFD96 /* TDTemplateEngine+ExpressionSupport.m */; };
 		D3100CE51CE52ED7007B38BE /* PKToken+Verbatim.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB32E318F76116005E0A3A /* PKToken+Verbatim.m */; };
-		D3100CE61CE52ED7007B38BE /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; };
+		D3100CE61CE52ED7007B38BE /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3100CE71CE52ED7007B38BE /* TDExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DF818E6584D00DC591E /* TDExpression.m */; };
 		D3100CE81CE52ED7007B38BE /* TDFilterExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D319137E18F1A4A900430BAD /* TDFilterExpression.m */; };
 		D3100CE91CE52ED7007B38BE /* TDUnaryExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A21F431AC9E85F0009A712 /* TDUnaryExpression.m */; };
@@ -171,7 +171,7 @@
 		D31E3E601F1C1D04004BD0C6 /* TDReplaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AC684E1A41D43400F7EB6A /* TDReplaceFilter.m */; };
 		D31E3E611F1C1D04004BD0C6 /* TDTemplateEngine+ExpressionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7E26A18EF9286009BFD96 /* TDTemplateEngine+ExpressionSupport.m */; };
 		D31E3E621F1C1D04004BD0C6 /* PKToken+Verbatim.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BB32E318F76116005E0A3A /* PKToken+Verbatim.m */; };
-		D31E3E631F1C1D04004BD0C6 /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; };
+		D31E3E631F1C1D04004BD0C6 /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D31E3E641F1C1D04004BD0C6 /* TDExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DF818E6584D00DC591E /* TDExpression.m */; };
 		D31E3E651F1C1D04004BD0C6 /* TDFilterExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D319137E18F1A4A900430BAD /* TDFilterExpression.m */; };
 		D31E3E661F1C1D04004BD0C6 /* TDUnaryExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A21F431AC9E85F0009A712 /* TDUnaryExpression.m */; };
@@ -324,7 +324,7 @@
 		D3A29E0618E6584D00DC591E /* TDValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29DFD18E6584D00DC591E /* TDValue.h */; };
 		D3A29E0718E6584D00DC591E /* TDValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DFE18E6584D00DC591E /* TDValue.m */; };
 		D3A29E0E18E65AC400DC591E /* TDParser.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29E0C18E65AC400DC591E /* TDParser.h */; };
-		D3A29E0F18E65AC400DC591E /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; };
+		D3A29E0F18E65AC400DC591E /* TDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E0D18E65AC400DC591E /* TDParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		D3A29E1718E6678500DC591E /* TDIfTag.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29DDF18E6423500DC591E /* TDIfTag.m */; };
 		D3A29E2B18E75D3B00DC591E /* TDArithmeticExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A29E2318E75D3B00DC591E /* TDArithmeticExpression.h */; };
 		D3A29E2C18E75D3B00DC591E /* TDArithmeticExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A29E2418E75D3B00DC591E /* TDArithmeticExpression.m */; };

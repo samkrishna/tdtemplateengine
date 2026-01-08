@@ -20,9 +20,9 @@
 
 @interface TDParser ()
     
-@property (nonatomic, retain) PKToken *openParen;
-@property (nonatomic, retain) PKToken *minus;
-@property (nonatomic, retain) PKToken *colon;
+@property (nonatomic, strong) PKToken *openParen;
+@property (nonatomic, strong) PKToken *minus;
+@property (nonatomic, strong) PKToken *colon;
 @property (nonatomic, assign) BOOL negation;
 @property (nonatomic, assign) BOOL negative;
 
@@ -134,17 +134,6 @@
 
     }
     return self;
-}
-
-- (void)dealloc {
-        
-    self.engine = nil;
-    self.openParen = nil;
-    self.minus = nil;
-    self.colon = nil;
-
-
-    [super dealloc];
 }
 
 - (void)start {
