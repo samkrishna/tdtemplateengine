@@ -13,7 +13,7 @@
 + (instancetype)writerWithOutputStream:(NSOutputStream *)output;
 - (instancetype)initWithOutputStream:(NSOutputStream *)output;
 
-@property (nonatomic, retain) NSOutputStream *output;
+@property (nonatomic, strong) NSOutputStream *output;
 
 - (void)appendString:(NSString *)str;
 - (void)appendFormat:(NSString *)fmt, ... NS_FORMAT_FUNCTION(1,2);

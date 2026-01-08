@@ -12,7 +12,7 @@
 @implementation TDWriter
 
 + (instancetype)writerWithOutputStream:(NSOutputStream *)output {
-    return [[[self alloc] initWithOutputStream:output] autorelease];
+    return [[self alloc] initWithOutputStream:output];
 }
 
 
@@ -22,12 +22,6 @@
         self.output = output;
     }
     return self;
-}
-
-
-- (void)dealloc {
-    self.output = nil;
-    [super dealloc];
 }
 
 
@@ -67,7 +61,7 @@
     va_list vargs;
     va_start(vargs, fmt);
     
-    NSString *str = [[[NSString alloc] initWithFormat:fmt arguments:vargs] autorelease];
+    NSString *str = [[NSString alloc] initWithFormat:fmt arguments:vargs];
     [self appendString:str];
     
     va_end(vargs);
