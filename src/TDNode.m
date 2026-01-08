@@ -26,7 +26,7 @@
 @implementation TDNode
 
 + (instancetype)nodeWithToken:(PKToken *)frag parent:(TDNode *)parent {
-    return [[[self alloc] initWithToken:frag parent:parent] autorelease];
+    return [[self alloc] initWithToken:frag parent:parent];
 }
 
 
@@ -40,12 +40,6 @@
 }
 
 
-- (void)dealloc {
-    self.parent = nil;
-    self.expression = nil;
-    
-    [super dealloc];
-}
 
 
 #pragma mark -

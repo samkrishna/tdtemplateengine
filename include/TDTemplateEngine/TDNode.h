@@ -37,8 +37,8 @@
 - (TDNode *)firstAncestorOfClass:(Class)cls;
 - (TDNode *)firstAncestorOfTagName:(NSString *)tagName;
 
-@property (nonatomic, assign) TDNode *parent; // weakref
+@property (nonatomic, weak) TDNode *parent; // weakref
 
 @property (nonatomic, copy, readonly) NSString *tagName;
-@property (nonatomic, retain) TDExpression *expression;
+@property (nonatomic, strong) TDExpression *expression;
 @end
