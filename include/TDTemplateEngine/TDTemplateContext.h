@@ -28,7 +28,7 @@
 
 - (instancetype)initWithVariables:(NSDictionary *)vars output:(NSOutputStream *)output;
 
-@property (nonatomic, retain, readonly) TDWriter *writer;
+@property (nonatomic, strong, readonly) TDWriter *writer;
 
 // Scope
 - (id)resolveVariable:(NSString *)name;
@@ -37,7 +37,7 @@
 - (void)writeObject:(id)obj;
 - (void)writeString:(NSString *)str;
 
-@property (nonatomic, retain) TDTemplateContext *enclosingScope;
+@property (nonatomic, strong) TDTemplateContext *enclosingScope;
 @property (nonatomic, assign) BOOL trimLines;
 
 - (void)increaseIndentDepth:(NSUInteger)times;

@@ -69,8 +69,8 @@ static NSCharacterSet *sNewlineSet = nil;
 @end
 
 @interface TDTemplateContext ()
-@property (nonatomic, retain) NSMutableDictionary *vars;
-@property (nonatomic, retain, readwrite) TDWriter *writer;
+@property (nonatomic, strong) NSMutableDictionary *vars;
+@property (nonatomic, strong, readwrite) TDWriter *writer;
 @property (nonatomic, assign) BOOL wroteNewline;
 @property (nonatomic, assign) BOOL wroteChars;
 
@@ -81,8 +81,8 @@ static NSCharacterSet *sNewlineSet = nil;
 
 + (void)initialize {
     if (self == [TDTemplateContext class]) {
-        sSpaceSet = [[NSCharacterSet whitespaceCharacterSet] retain];
-        sNewlineSet = [[NSCharacterSet newlineCharacterSet] retain];
+        sSpaceSet = [NSCharacterSet whitespaceCharacterSet];
+        sNewlineSet = [NSCharacterSet newlineCharacterSet];
     }
 }
 
@@ -102,14 +102,6 @@ static NSCharacterSet *sNewlineSet = nil;
         self.writer = [TDWriter writerWithOutputStream:output];
     }
     return self;
-}
-
-
-- (void)dealloc {
-    self.vars = nil;
-    self.writer = nil;
-    self.enclosingScope = nil;
-    [super dealloc];
 }
 
 
@@ -195,37 +187,38 @@ static NSCharacterSet *sNewlineSet = nil;
         
         for (NSString *comp in comps) {
             isLast = lastIdx == idx++;
-            
+
+            NSString *line = comp;
             if (isFirst && isLast) {
                 fmt = @"%@";
-            } else if (isFirst && _wroteChars && ![comp length]) {
-                comp = @"\n";
+            } else if (isFirst && _wroteChars && ![line length]) {
+                line = @"\n";
                 fmt = @"%@";
             } else if (isFirst) {
-                comp = [comp td_stringByTrimmingTrailingCharactersInSet:sSpaceSet];
+                line = [line td_stringByTrimmingTrailingCharactersInSet:sSpaceSet];
                 fmt = @"%@\n";
             } else if (isLast) {
-                comp = [comp td_stringByTrimmingLeadingCharactersInSet:sSpaceSet];
+                line = [line td_stringByTrimmingLeadingCharactersInSet:sSpaceSet];
                 fmt = @"%@";
             } else {
-                comp = [comp stringByTrimmingCharactersInSet:sSpaceSet];
-                if ([comp length]) {
+                line = [line stringByTrimmingCharactersInSet:sSpaceSet];
+                if ([line length]) {
                     fmt = @"%@\n";
                 } else {
-                    comp = @"\n";
+                    line = @"\n";
                     fmt = @"%@";
                 }
             }
-            
-            if ([comp length]) {
+
+            if ([line length]) {
                 if (_firstWriteAfterIndent || _wroteNewline) {
                     self.firstWriteAfterIndent = NO;
                     for (NSUInteger depth = 0; depth < _indentDepth; ++depth) {
                         [_writer appendString:@"    "];
                     }
                 }
-                [_writer appendFormat:fmt, comp];
-                self.wroteNewline = [fmt hasSuffix:@"\n"] || [comp hasSuffix:@"\n"];
+                [_writer appendFormat:fmt, line];
+                self.wroteNewline = [fmt hasSuffix:@"\n"] || [line hasSuffix:@"\n"];
                 self.wroteChars = !_wroteNewline;
             }
             isFirst = NO;
